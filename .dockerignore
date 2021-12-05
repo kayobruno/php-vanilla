@@ -1,0 +1,15 @@
+.git
+.gitignore
+.cache
+.dockerignore
+**/*.class
+**/*.key
+**/*.pem
+**/*.pub
+*.md
+*.npmrc
+!README*.md
+README-secret.md
+npm-debug.log
+Dockerfile
+node_modules
