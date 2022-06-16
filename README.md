@@ -13,6 +13,11 @@ docker-compose up -d
 docker exec -it php bash
 ```
 
+✔️ To run command to Create User
+```
+➜ docker exec -it php php public/index.php CreateUser {name} {email}
+```
+
 ✅ Run unit tests with **PHPUnit**
 ```bash
 composer test
