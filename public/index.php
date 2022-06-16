@@ -17,4 +17,13 @@ require 'vendor/autoload.php';
     /** @var ContainerInterface $container */
     $container = require 'config/container.php';
 
+    try {
+        /** @var Application $app */
+        $app = $container->get(Application::class);
+        $app->addCommand($container->get(CreateUser::class));
+
+        $app->run();
+    } catch (\Exception $exception) {
+        echo $exception->getMessage() . PHP_EOL;
+    }
 })();
