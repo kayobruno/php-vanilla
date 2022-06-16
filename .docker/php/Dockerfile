@@ -1,4 +1,4 @@
-FROM php:8.0.5-fpm-alpine@sha256:d0ca3bb7ac1328193ef5c246da1de3ff33f663ab5576ef05ad60a9b956707222
+FROM php:8.1-fpm-alpine3.16@sha256:e4fa9ffad6bfee2d988982a9164362232f3c9af570fc6e1ca04bd534c48e62b5
 
 RUN apk add $PHPIZE_DEPS --no-cache openssl postgresql-dev bash \
     && pecl install xdebug redis \
