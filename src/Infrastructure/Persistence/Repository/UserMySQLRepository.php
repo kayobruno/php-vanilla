@@ -28,7 +28,7 @@ class UserMySQLRepository implements Repository
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function find(int $id): array
+    public function find(int $id): ?Entity
     {
         $stmt = $this->conn->prepare("SELECT * FROM users WHERE id=:id");
         $stmt->execute([$id]);
@@ -38,7 +38,7 @@ class UserMySQLRepository implements Repository
 
     public function insert(Entity $entity): void
     {
-        $params = serialize($entity);
+        $params = (array) serialize($entity);
         $placeholdersToParams = $this->prepareParams($params);
 
         $stmt= $this->conn->prepare("INSERT INTO users (`name`, `email`) VALUES ({$placeholdersToParams})");
@@ -47,7 +47,7 @@ class UserMySQLRepository implements Repository
 
     public function update(int $id, Entity $entity): void
     {
-        $params = serialize($entity);
+        $params = (array) serialize($entity);
         $params['id'] = $id;
 
         $stmt = $this->conn->prepare("UPDATE users SET name=:name, email=:email WHERE id=:id");

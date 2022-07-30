@@ -45,6 +45,7 @@ class UserInMemoryRepositoryTest extends TestCase
     public function repository_FindEntity_ShouldReturnCorrectEntity(): void
     {
         $this->repository->insert(new User(1, 'Kayo', 'kayodw@gmail.com'));
+        /** @var User $user */
         $user = $this->repository->find(1);
 
         $this->assertEquals('Kayo', $user->getName());
