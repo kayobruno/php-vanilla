@@ -1,6 +1,7 @@
 {
     "name": "kayo/php-vanilla",
     "type": "project",
+    "description": "PHP Skeleton",
     "require": {
         "php": "^8.0",
         "ext-pdo": "*",
