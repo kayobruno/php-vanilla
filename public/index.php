@@ -13,7 +13,7 @@ if (php_sapi_name() !== 'cli') {
 chdir(dirname(__DIR__));
 require 'vendor/autoload.php';
 
-(function() {
+(function () {
     /** @var ContainerInterface $container */
     $container = require 'config/container.php';
 

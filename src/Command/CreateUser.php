@@ -11,7 +11,8 @@ use App\Entity\User;
 class CreateUser implements Command
 {
     public function __construct(private Repository $repository)
-    { }
+    {
+    }
 
     public function execute(): void
     {
