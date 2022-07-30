@@ -31,3 +31,12 @@ jobs:
 
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
+
+    - name: Run Unit Tests
+      run: composer test
+
+    - name: Run Static Analysis
+      run: composer phpstan
+
+    - name: Run Coding Standards
+      run: composer check-style
